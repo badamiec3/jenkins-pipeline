@@ -8,7 +8,7 @@ pipeline {
       sh ". ./scripts/make-python.sh"
       }
     }
-    stage('run python script') {
+    stage('Run Python Script') {
       steps {
     // Run the script with Python3
       sh 'python3 helloworld.py'
