@@ -6,7 +6,7 @@ pipeline {
       // Make the file
       sh 'touch helloworld.py'
       // Put concent in file
-      sh "echo 'print("hello world")' > helloworld.py"
+      sh echo 'print("hello world")' > helloworld.py
       }
     }
     stage('run python script') {
