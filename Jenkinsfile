@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment{
+      DB_PASSWORD=credentials('DATABASE_PASSWORD')
+  }
   stages{
     stage('Make Python Script') {
       steps {
@@ -18,6 +21,11 @@ pipeline {
       steps {
       sh "mkdir ~/jenkins-tutorial-test"
       sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+      }
+    }
+    stage('show password') {
+      steps {
+        sh "echo ${DB_PASSWORD}" 
       }
     }
   }
