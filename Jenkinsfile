@@ -14,6 +14,12 @@ pipeline {
       sh 'python3 helloworld.py'
       }
     }
+     stage('Create Files') {
+      steps {
+      sh "mkdir ~/jenkins-tutorial-test"
+      sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+      }
+    }
   }
 
 }
